@@ -1,0 +1,98 @@
+<!-- ========================= -->
+    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- ========================= -->
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand fw-bold" href="index.html">
+            🎀 Tienda
+        </a>
+
+
+        <!-- BOTÓN PARA CELULAR -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- MENÚ -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="/">
+                        Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'productos' %}active{% endif %}" href="/productos.html">
+                        Productos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'promociones' %}active{% endif %}" href="{% url 'promociones' %}">
+                        Promociones
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pedidos.html">
+                        Pedidos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="agendar-pedido.html">
+                        Agendar pedido
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'resenas' %}active{% endif %}" href="{% url 'resenas' %}">
+                        Reseñas
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="iniciar_sesion.html">
+                        Iniciar Sesión
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="registrarse.html">
+                        Registrarse
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link {% if request.resolver_match.url_name == 'carrito' %}active{% endif %}" href="{% url 'carrito' %}">
+
+                        <i class="bi bi-cart3"></i>
+                        Carrito{% with cantidad_carrito=request.session.carrito|default_if_none:'' %}{% if cantidad_carrito %}<span class="badge rounded-pill bg-primary">{{ cantidad_carrito|length }}</span>{% endif %}{% endwith %}
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>

@@ -1,0 +1,74 @@
+:root {
+    --fubuki-ink: #49364d;
+    --fubuki-pink: #f8e6f0;
+    --fubuki-lilac: #ecebfb;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--fubuki-ink);
+    background-color: #fff4fa;
+    background-image:
+        radial-gradient(ellipse at 4% 10%, rgba(244, 174, 211, .78), transparent 38rem),
+        radial-gradient(ellipse at 96% 34%, rgba(176, 178, 241, .72), transparent 42rem),
+        radial-gradient(ellipse at 48% 100%, rgba(255, 213, 220, .66), transparent 44rem),
+        linear-gradient(135deg, #fff2f9 0%, #fff8f4 46%, #f0efff 100%);
+    background-attachment: fixed;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, .84) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(127, 91, 133, .1);
+}
+
+main,
+section {
+    position: relative;
+}
+
+section > .container > .bg-light,
+section.bg-light {
+    background: linear-gradient(120deg, rgba(255, 255, 255, .91), rgba(250, 232, 248, .82)) !important;
+    border: 1px solid rgba(255, 255, 255, .96);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1rem 3rem rgba(125, 79, 139, .1);
+}
+
+.btn-primary {
+    --bs-btn-bg: #c34f91;
+    --bs-btn-border-color: #c34f91;
+    --bs-btn-hover-bg: #a83b79;
+    --bs-btn-hover-border-color: #a83b79;
+    --bs-btn-active-bg: #96346d;
+    --bs-btn-active-border-color: #96346d;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #a83b79;
+    --bs-btn-border-color: #c34f91;
+    --bs-btn-hover-bg: #c34f91;
+    --bs-btn-hover-border-color: #c34f91;
+}
+
+.card {
+    color: var(--fubuki-ink);
+    background: rgba(255, 255, 255, .9);
+    border: 1px solid rgba(221, 202, 222, .55);
+    border-radius: 1rem;
+}
+
+.text-muted {
+    color: #796d7d !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 2rem rgba(73, 54, 77, .1) !important;
+    }
+}

@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local databases and environment secrets
+*.sqlite3
+.env
+.env.*
+!.env.example
+
+# Django collected files
+/staticfiles/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill text-bg-light px-3 py-2 mb-3">Ofertas especiales 🎀</span>
+                <h1 class="display-5 fw-bold">Promociones para compartir</h1>
+                <p class="lead text-muted">Arma tu caja favorita de mochis y aprovecha estos precios.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <article class="card h-100 shadow-sm overflow-hidden">
+                        <img src="{% static 'img/mochi.png' %}" class="card-img-top" alt="Caja de mochis surtidos">
+                        <div class="card-body text-center d-flex flex-column">
+                            <span class="badge rounded-pill text-bg-light align-self-center mb-2">Favorita</span>
+                            <h2 class="h4 card-title">Dúo de mochis</h2>
+                            <p class="card-text text-muted">Elige dos sabores para disfrutar o compartir.</p>
+                            <p class="fs-4 fw-bold mb-3">$9.000 <span class="fs-6 fw-normal text-muted text-decoration-line-through">$12.000</span></p>
+                            <a href="{% url 'productos' %}" class="btn btn-primary mt-auto">Elegir productos</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="card h-100 shadow-sm overflow-hidden">
+                        <img src="{% static 'img/mochi.png' %}" class="card-img-top" alt="Selección de mochis de distintos sabores">
+                        <div class="card-body text-center d-flex flex-column">
+                            <span class="badge rounded-pill text-bg-light align-self-center mb-2">Para compartir</span>
+                            <h2 class="h4 card-title">Caja de 3 mochis</h2>
+                            <p class="card-text text-muted">Prueba tres sabores en una sola caja.</p>
+                            <p class="fs-4 fw-bold mb-3">$13.500 <span class="fs-6 fw-normal text-muted text-decoration-line-through">$18.000</span></p>
+                            <a href="{% url 'productos' %}" class="btn btn-primary mt-auto">Elegir productos</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <p class="small text-muted text-center mt-4">Promociones sujetas a disponibilidad. Consulta los sabores en Productos.</p>
+        </div>
+    </section>
+</main>
+{% endblock %}

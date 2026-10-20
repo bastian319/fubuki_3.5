@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">
+                Nuestros Productos ✨
+            </h2>
+        </div>
+
+        <div class="row g-4">
+            {% if productos %}
+                {% for producto in productos %}
+                    <!-- TARJETAS PERSONALIZADAS -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="{% static producto.imagen_url %}" class="card-img-top" alt="{{ producto.nombre }}">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">
+                                    {{ producto.nombre }}
+                                </h5>
+
+                                <p class="card-text fw-bold">
+                                    ${{ producto.precio }}
+                                </p>
+
+                                <!-- Enlace dinámico usando la URL que configuramos antes -->
+                                <a href="{% url 'detalle_producto' producto.id %}" class="btn btn-primary">
+                                    Ver producto
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-12 text-center">
+                    <p class="text-muted">No hay productos disponibles por el momento.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

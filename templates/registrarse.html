@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %} 
+
+{% block content %}
+<div class="container my-5" style="max-width: 500px;">
+        <div class="card shadow-sm p-4">
+            <h2 class="mb-4 text-center fw-bold">Crear Cuenta ✨</h2>
+            <hr>
+
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="nombre_usuario" class="form-label">Nombre de usuario</label>
+                    <input type="text" required class="form-control" name="nombre_usuario" id="nombre_usuario" placeholder="Ingrese su nombre de usuario">
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" required class="form-control" name="correo" id="correo" placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="mb-3">
+                    <label for="contrasena1" class="form-label">Contraseña</label>
+                    <input type="password" required class="form-control" name="contrasena1" id="contrasena1" placeholder="Ingrese su contraseña">
+                </div>
+
+                <div class="mb-3">
+                    <label for="contrasena2" class="form-label">Confirmar contraseña</label>
+                    <input type="password" required class="form-control" name="contrasena2" id="contrasena2" placeholder="Repita su contraseña">
+                </div>
+
+                <div class="mb-3 d-flex gap-2">
+                   <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+                   <a class="btn btn-secondary" href="/">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

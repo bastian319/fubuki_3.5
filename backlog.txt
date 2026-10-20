@@ -1,0 +1,15 @@
+ESTADO DEL PRODUCT BACKLOG — TIENDA FUBUKI
+
+| ID | Historia | Estado | Situación actual en la página |
+|---|---|---|---|
+| HU 01 | Catálogo con fotos reales | Parcial | El catálogo usa imágenes guardadas en static/img. La portada muestra productos genéricos con la misma foto y las promociones repiten una imagen; falta asociar fotos reales y específicas a cada producto o promoción y ajustar la paleta a rosado, coral y café. |
+| HU 02 | Límite de 50 unidades | Parcial | La ficha permite elegir hasta 50 unidades por producto y el carrito valida el stock. Falta limitar a 50 la suma de todas las unidades del pedido y sugerir el agendamiento especial al superar ese límite. |
+| HU 03 | Compra como invitado | Falta | Existe carrito, pero no hay flujo de pago, solicitud de datos de envío ni opción «Continuar como invitado». |
+| HU 04 | Indicador «Fuera de Stock» | Parcial | La ficha muestra el stock y bloquea agregar productos cuando llega a cero. Falta mostrar la etiqueta «Fuera de stock» en el catálogo. |
+| HU 05 | Agendamiento especial | Falta | El enlace «Agendar pedido» no tiene formulario implementado. Tampoco se valida una fecha con al menos 48 horas de anticipación. |
+| HU 06 | Sistema de fidelización | Falta | Hay registro de usuarios, pero no hay descuentos por compras, beneficios por volumen ni regalos de cumpleaños. |
+| HU 07 | Buzón de sugerencias | Falta | No hay formulario ni almacenamiento de sugerencias para administración. |
+| HU 08 | Sección de contacto directo | Parcial | El footer muestra teléfono y correo de ejemplo. Los enlaces de Instagram y WhatsApp no dirigen a canales reales. |
+| HU 09 | Sección de valoraciones y reseñas | Parcial | Se pueden publicar y consultar reseñas. No se valida que sean de compradores y no se encontró protección adicional contra spam. |
+
+Nota: el carrito permite agregar, actualizar y quitar productos, pero todavía no incluye un proceso de pago.

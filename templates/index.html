@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- ========================= -->
+<!-- BANNER PRINCIPAL -->
+<!-- ========================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="p-5 text-center rounded-4 shadow-sm bg-light">
+
+            <h1 class="display-5 fw-bold">
+                Bienvenid@s a nuestra tienda 💕
+            </h1>
+
+            <p class="lead mt-3">
+
+                Encuentra productos, promociones
+                y mucho más.
+
+            </p>
+
+            <a
+                href="productos.html"
+                class="btn btn-primary btn-lg mt-3"
+            >
+
+                Ver productos
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PRODUCTOS DESTACADOS -->
+<!-- ========================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Productos destacados ✨
+            </h2>
+
+            <p class="text-muted">
+                Algunos de nuestros productos favoritos.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PRODUCTO 1 -->
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <img
+                        src="{% static 'img/mochi.png' %}"
+                        class="card-img-top"
+                        alt="Producto 1"
+                    >
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title">
+                            Producto 1
+                        </h5>
+
+                        <p class="card-text fw-bold">
+                            $5.000
+                        </p>
+
+                        <a
+                            href="productos.html"
+                            class="btn btn-primary"
+                        >
+                            Ver producto
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 2 -->
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <img
+                        src="{% static 'img/mochi.png' %}"
+                        class="card-img-top"
+                        alt="Producto 2"
+                    >
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title">
+                            Producto 2
+                        </h5>
+
+                        <p class="card-text fw-bold">
+                            $6.000
+                        </p>
+
+                        <a
+                            href="productos.html"
+                            class="btn btn-primary"
+                        >
+                            Ver producto
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 3 -->
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <img
+                        src="{% static 'img/mochi.png' %}"
+                        class="card-img-top"
+                        alt="Producto 3"
+                    >
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title">
+                            Producto 3
+                        </h5>
+
+                        <p class="card-text fw-bold">
+                            $7.000
+                        </p>
+
+                        <a
+                            href="productos.html"
+                            class="btn btn-primary"
+                        >
+                            Ver producto
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PROMOCIONES -->
+<!-- ========================= -->
+
+<section class="py-5 bg-light">
+
+    <div class="container text-center">
+
+        <h2 class="fw-bold">
+            Promociones 🎁
+        </h2>
+
+        <p class="mt-3">
+
+            Descubre nuestras promociones
+            y combinaciones especiales.
+
+        </p>
+
+        <a
+            href="{% url 'promociones' %}"
+            class="btn btn-outline-primary"
+        >
+
+            Ver promociones
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- RESEÑAS -->
+<!-- ========================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Opiniones de nuestros clientes 💗
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+            {% for resena in resenas %}
+            <div class="col-md-6">
+                <article class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="mb-2 text-warning" aria-label="{{ resena.calificacion }} de 5 estrellas">
+                            {% for estrella in "12345" %}{% if forloop.counter <= resena.calificacion %}★{% else %}☆{% endif %}{% endfor %}
+                        </div>
+                        <p class="card-text">“{{ resena.comentario }}”</p>
+                        <small class="text-muted">{{ resena.nombre }}</small>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center text-muted">
+                <p>Aún no hay reseñas. ¡Puedes compartir la primera!</p>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="text-center mt-4">
+
+            <a
+                href="{% url 'resenas' %}"
+                class="btn btn-outline-primary"
+            >
+
+                Dejar una reseña
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
+
+
